@@ -1,17 +1,14 @@
-import React from "react";
-
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-[#0d151c] py-6 text-center">
-      <p className="mb-3">📞 001 083422289 | ✉️ yow@Navkalpit.com</p>
-      <div className="flex justify-center gap-4 text-xl">
-        <a href="#">🐦</a>
-        <a href="#">📘</a>
-        <a href="#">📷</a>
-        <a href="#">💬</a>
+    <footer>
+      <div className="max-w-7xl mx-auto p-8 text-neutral flex flex-col md:flex-row justify-between items-center">
+        <div className="text-sm">
+          © {new Date().getFullYear()} Hardware Store • All rights reserved
+        </div>
+        <div className="text-sm mt-3 md:mt-0">
+          Designed with ❤️ • <span className="text-accent">Signal Orange</span>
+        </div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
