@@ -1,9 +1,28 @@
 import React from "react";
-import team1 from "/assets/images/banner1.png";
-import team2 from "/assets/images/banner2.png";
-import team3 from "/assets/images/banner3.png";
+import team1 from "/assets/images/user.jpg";
+import team2 from "/assets/images/CEO.jpg";
+import team3 from "/assets/images/founder.jpg";
 
 const AboutUs = () => {
+  // ✅ Team Members as an array of objects
+  const teamMembers = [
+    {
+      name: "Sneha Sigh",
+      position: "Lead Hardware Engineer",
+      image: team1,
+    },
+    {
+      name: "Dipti Patel",
+      position: "Chief Executive Officer (CEO)",
+      image: team2,
+    },
+    {
+      name: "Krishna Desai",
+      position: "Founder & Visionary",
+      image: team3,
+    },
+  ];
+
   return (
     <div className="bg-[#121212] text-[#E0E0E0] min-h-screen">
       {/* Hero Section */}
@@ -38,7 +57,7 @@ const AboutUs = () => {
           </p>
         </div>
         <img
-          src="/assets/images/about-hero.png"
+          src="/assets/images/AboutUs.png"
           alt="About Us"
           className="w-full rounded-2xl shadow-lg object-cover"
         />
@@ -73,18 +92,20 @@ const AboutUs = () => {
           Meet Our Team
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[team1, team2, team3].map((member, idx) => (
+          {teamMembers.map((member, idx) => (
             <div
               key={idx}
               className="bg-[#1F2937] rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300"
             >
               <img
-                src={member}
-                alt={`Team member ${idx + 1}`}
+                src={member.image}
+                alt={member.name}
                 className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
               />
-              <h3 className="text-xl font-semibold text-white mb-2">John Doe</h3>
-              <p className="text-[#E0E0E0]">Lead Hardware Engineer</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {member.name}
+              </h3>
+              <p className="text-[#E0E0E0]">{member.position}</p>
             </div>
           ))}
         </div>

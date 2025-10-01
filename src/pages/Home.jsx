@@ -15,17 +15,17 @@ const Home = () => {
   </h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     <ProductCard
-      img="/assets/images/banner3.png"
+      img="/assets/images/nvidia.jpg"
       name="NVIDIA RTX 4080"
       price="₹1,20,000"
     />
     <ProductCard
-      img="/assets/images/banner1.png"
+      img="/assets/images/intel.jpg"
       name="Intel i9 14th Gen"
       price="₹65,000"
     />
     <ProductCard
-      img="/assets/images/banner2.png"
+      img="/assets/images/DDR5.jpg"
       name="Corsair 32GB DDR5"
       price="₹18,000"
     />

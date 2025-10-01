@@ -5,37 +5,37 @@ import ProductCard from "../components/ProductCard";
 const products = [
   {
     id: 1,
-    img: "/assets/images/banner1.png",
+    img: "/assets/images/nvidia.jpg",
     name: "NVIDIA RTX 4080",
     price: "₹1,20,000",
   },
   {
     id: 2,
-    img: "/assets/images/banner2.png",
+    img: "/assets/images/intel.jpg",
     name: "Intel i9 14th Gen",
     price: "₹65,000",
   },
   {
     id: 3,
-    img: "/assets/images/banner3.png",
+    img: "/assets/images/DDR5.jpg",
     name: "Corsair 32GB DDR5",
     price: "₹18,000",
   },
   {
     id: 4,
-    img: "/assets/images/banner1.png",
+    img: "/assets/images/rayzen.jpg",
     name: "AMD Ryzen 9 7900X",
     price: "₹55,000",
   },
   {
     id: 5,
-    img: "/assets/images/banner2.png",
+    img: "/assets/images/samsung.jpg",
     name: "Samsung 2TB SSD",
     price: "₹15,000",
   },
   {
     id: 6,
-    img: "/assets/images/banner3.png",
+    img: "/assets/images/keyboard.jpg",
     name: "Corsair RGB Gaming Keyboard",
     price: "₹7,500",
   },
