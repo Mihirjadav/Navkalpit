@@ -1,80 +1,199 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "/assets/images/logo.png";
+// MUI icons (install with: npm install @mui/icons-material @mui/material @emotion/react @emotion/styled)
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass = ({ isActive }) =>
-    isActive
-      ? "text-[#00c4ff] font-semibold"
-      : "text-white hover:text-[#00c4ff]";
+    isActive ? "text-[#00c4ff] font-semibold" : "text-black";
 
   return (
-    <header className="bg-[#0d151c] shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <img src={logo} alt="Navkalpit Logo" className="w-10 h-10 object-contain" />
-          <div className="text-2xl font-bold text-white">Navkalpit</div>
-        </div>
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/20 backdrop-blur-md border-b border-gray-100">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8">
+          {/* Brand / Company name */}
+          <div className="flex items-center mr-6">
+            <h1 className="text-2xl font-bold text-black">
+              <NavLink to="/" className="hover:opacity-90">
+                Navkalpit
+              </NavLink>
+            </h1>
+          </div>
 
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-6">
-          <NavLink to="/" className={linkClass}>Home</NavLink>
-          <NavLink to="/products" className={linkClass}>Products</NavLink>
-          <NavLink to="/services" className={linkClass}>Services</NavLink>
-          <NavLink to="/aboutus" className={linkClass}>About Us</NavLink>
-          <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-          <NavLink
-            to="/signup"
-            className={({ isActive }) =>
-              isActive
-                ? "bg-[#00c4ff] text-black px-4 py-2 rounded-lg font-semibold"
-                : "bg-[#00c4ff] text-black px-4 py-2 rounded-lg hover:bg-[#00a8d1]"
-            }
+          {/* Inline Menu (desktop) */}
+          <nav className="hidden md:flex items-center gap-6 text-black">
+            <NavLink to="/" className={linkClass}>
+              Home
+            </NavLink>
+            <NavLink to="/aboutus" className={linkClass}>
+              About
+            </NavLink>
+            <NavLink to="/blogs" className={linkClass}>
+              Blogs
+            </NavLink>
+            <NavLink to="/services" className={linkClass}>
+              Service
+            </NavLink>
+            <NavLink to="/products" className={linkClass}>
+              Products
+            </NavLink>
+            <NavLink to="/library" className={linkClass}>
+              Library
+            </NavLink>
+            <NavLink to="/faq" className={linkClass}>
+              FAQ
+            </NavLink>
+            <NavLink to="/contact" className={linkClass}>
+              Contact
+            </NavLink>
+          </nav>
+
+          {/* Icons: User & Cart */}
+          <div className="hidden md:flex items-center gap-4">
+            <NavLink to="/signup" aria-label="Signup" className="p-0">
+              <button
+                aria-label="User Signup"
+                className="text-black p-2 rounded-md hover:bg-gray-100"
+              >
+                <PersonIcon style={{ fontSize: 22 }} />
+              </button>
+            </NavLink>
+            <NavLink to="/cart" aria-label="CartLink" className="p-0">
+              <button
+                aria-label="Cart"
+                className="text-black p-2 rounded-md hover:bg-gray-100"
+              >
+                <ShoppingCartIcon style={{ fontSize: 22 }} />
+              </button>
+            </NavLink>
+          </div>
+
+          {/* Mobile Menu Button (keeps black color) */}
+          <button
+            className="md:hidden text-black focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
           >
-            Signup
-          </NavLink>
-        </nav>
+            <svg
+              className="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {menuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+      </header>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {menuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </div>
+      {/* spacer so page content doesn't sit under fixed navbar */}
+      <div className="h-16 md:h-20" />
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0d151c] px-4 pb-4 space-y-2">
-          <NavLink to="/" className={linkClass} onClick={() => setMenuOpen(false)}>Home</NavLink>
-          <NavLink to="/products" className={linkClass} onClick={() => setMenuOpen(false)}>Products</NavLink>
-          <NavLink to="/services" className={linkClass} onClick={() => setMenuOpen(false)}>Services</NavLink>
-          <NavLink to="/aboutus" className={linkClass} onClick={() => setMenuOpen(false)}>About Us</NavLink>
-          <NavLink to="/contact" className={linkClass} onClick={() => setMenuOpen(false)}>Contact</NavLink>
+        <div className="md:hidden bg-white px-4 pb-4 space-y-2 text-black">
           <NavLink
-            to="/signup"
-            className={({ isActive }) =>
-              isActive
-                ? "w-full block text-center bg-[#00c4ff] text-black px-4 py-2 rounded-lg font-semibold"
-                : "w-full block text-center bg-[#00c4ff] text-black px-4 py-2 rounded-lg hover:bg-[#00a8d1]"
-            }
+            to="/"
+            className={linkClass}
             onClick={() => setMenuOpen(false)}
           >
-            Signup
+            Home
           </NavLink>
+          <NavLink
+            to="/about"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Blogs
+          </NavLink>
+          <NavLink
+            to="/service"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Service
+          </NavLink>
+          <NavLink
+            to="/products"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/library"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Library
+          </NavLink>
+          <NavLink
+            to="/faq"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            FAQ
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={linkClass}
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </NavLink>
+          <div className="flex items-center gap-3 pt-2">
+            <NavLink
+              to="/signup"
+              onClick={() => setMenuOpen(false)}
+              className="p-0"
+            >
+              <button
+                aria-label="User Signup"
+                className="text-black p-2 rounded-md hover:bg-gray-100"
+              >
+                <PersonIcon style={{ fontSize: 18 }} />
+              </button>
+            </NavLink>
+            <NavLink
+              to="/cart"
+              onClick={() => setMenuOpen(false)}
+              className="p-0"
+            >
+              <button
+                aria-label="Cart"
+                className="text-black p-2 rounded-md hover:bg-gray-100"
+              >
+                <ShoppingCartIcon style={{ fontSize: 18 }} />
+              </button>
+            </NavLink>
+          </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
 

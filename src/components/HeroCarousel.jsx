@@ -4,19 +4,19 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     id: 1,
-    img: "/assets/images/banner1.png",
-    title: "High Performance Gaming PCs",
-    subtitle: "Experience next-level speed and graphics",
+    img: "/assets/images/banner1.jpg",
+    title: `High-Quality PCBs, Delivered Fast.`,
+    subtitle: `Your trusted partner for reliable and affordable PCB prototyping and manufacturing services.`,
   },
   {
     id: 2,
-    img: "/assets/images/banner2.png",
+    img: "/assets/images/banner2.jpg",
     title: "Latest Hardware Components",
     subtitle: "Upgrade your system with top brands",
   },
   {
     id: 3,
-    img: "/assets/images/banner3.png",
+    img: "/assets/images/banner3.jpg",
     title: "Custom PC Builds",
     subtitle: "Tailored solutions for gamers & creators",
   },
@@ -53,8 +53,8 @@ const HeroCarousel = () => {
             <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#E0E0E0] max-w-2xl">
               {slide.subtitle}
             </p>
-            <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 bg-[#FF6F00] hover:bg-[#e65c00] rounded-xl font-semibold text-white text-sm sm:text-base md:text-lg">
-              Shop Now
+            <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 bg-[#00c4ff] hover:bg-[#00a8d1] rounded-xl font-semibold text-black text-sm sm:text-base md:text-lg">
+              Get an Instant Quote
             </button>
           </div>
         </div>

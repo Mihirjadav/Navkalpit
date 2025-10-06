@@ -1,71 +1,150 @@
-import React from "react";
+import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 
 // Sample Products Data
 const products = [
   {
     id: 1,
-    img: "/assets/images/nvidia.jpg",
-    name: "NVIDIA RTX 4080",
-    price: "₹1,20,000",
+    img: "/assets/images/flexible.jpg",
+    name: "Flexible PCB - 4 Layer",
+    price: "$125.00",
   },
   {
     id: 2,
-    img: "/assets/images/intel.jpg",
-    name: "Intel i9 14th Gen",
-    price: "₹65,000",
+    img: "/assets/images/rigidflex.jpg",
+    name: "Rigid-Flex PCB - 6 Layer",
+    price: "$250.50",
   },
   {
     id: 3,
-    img: "/assets/images/DDR5.jpg",
-    name: "Corsair 32GB DDR5",
-    price: "₹18,000",
+    img: "/assets/images/multilayer.jpg",
+    name: "Multi-Layer PCB - 8 Layer",
+    price: "$310.00",
   },
   {
     id: 4,
-    img: "/assets/images/rayzen.jpg",
-    name: "AMD Ryzen 9 7900X",
-    price: "₹55,000",
+    img: "/assets/images/aluminum_core.jpg",
+    name: "Aluminum Core PCB",
+    price: "$95.75",
   },
   {
     id: 5,
-    img: "/assets/images/samsung.jpg",
-    name: "Samsung 2TB SSD",
-    price: "₹15,000",
+    img: "/assets/images/stencil.jpg",
+    name: "SMT Stencil",
+    price: "$50.00",
   },
   {
     id: 6,
-    img: "/assets/images/keyboard.jpg",
-    name: "Corsair RGB Gaming Keyboard",
-    price: "₹7,500",
+    img: "/assets/images/assembly_kit.jpg",
+    name: "DIY Assembly Kit",
+    price: "$75.00",
   },
 ];
 
 const Products = () => {
-  return (
-    <div className="bg-[#121212] min-h-screen text-[#E0E0E0]">
-      {/* Hero Section */}
-      <section className="text-center py-16 px-6 bg-gradient-to-r from-[#121212] via-[#1F2937] to-[#121212]">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#FF6F00] mb-4">
-          Our Products
-        </h1>
-        <p className="text-lg sm:text-xl max-w-2xl mx-auto">
-          Explore our premium range of computer hardware and accessories
-          carefully curated for gamers, professionals, and tech enthusiasts.
-        </p>
-      </section>
+  const [category, setCategory] = useState("All");
+  const [sort, setSort] = useState("");
 
-      {/* Products Grid */}
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              img={product.img}
-              name={product.name}
-              price={product.price}
-            />
-          ))}
+  const filtered = products.filter(
+    (p) => category === "All" || p.name.includes(category)
+  );
+
+  return (
+    <div className="bg-white text-black min-h-screen">
+      <section className="max-w-7xl mx-auto py-12 px-6">
+        <h1 className="text-3xl font-extrabold mb-1">Our Products</h1>
+        <p className="text-gray-600 mb-6">
+          Explore our range of high-quality PCB products, from standard boards
+          to advanced custom solutions.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Filters - left */}
+          <aside className="lg:col-span-3">
+            <div className="sticky top-28">
+              <h4 className="font-semibold mb-3">Filters</h4>
+              <div className="bg-white border rounded-md p-4">
+                <div className="mb-4">
+                  <h5 className="font-medium mb-2">Category</h5>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input
+                      type="radio"
+                      name="cat"
+                      onChange={() => setCategory("All")}
+                      checked={category === "All"}
+                    />
+                    All
+                  </label>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input
+                      type="radio"
+                      name="cat"
+                      onChange={() => setCategory("Flexible")}
+                      checked={category === "Flexible"}
+                    />
+                    PCBs
+                  </label>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input
+                      type="radio"
+                      name="cat"
+                      onChange={() => setCategory("Stencil")}
+                      checked={category === "Stencil"}
+                    />
+                    Stencils
+                  </label>
+                </div>
+
+                <div>
+                  <h5 className="font-medium mb-2">Price Range</h5>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="radio" name="price" /> $0 - $100
+                  </label>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="radio" name="price" /> $100 - $300
+                  </label>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="radio" name="price" /> $300 - $500
+                  </label>
+                  <label className="flex items-center gap-2 text-sm">
+                    <input type="radio" name="price" /> $500+
+                  </label>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          {/* Products list */}
+          <main className="lg:col-span-9">
+            <div className="flex items-center justify-between mb-6">
+              <div className="text-sm text-gray-600">
+                Showing {filtered.length} products
+              </div>
+              <div className="flex items-center gap-4">
+                <label className="text-sm text-gray-600">Sort by</label>
+                <select
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                  className="border rounded-md px-2 py-1"
+                >
+                  <option value="">Default</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filtered.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  img={product.img}
+                  name={product.name}
+                  price={product.price}
+                />
+              ))}
+            </div>
+          </main>
         </div>
       </section>
     </div>

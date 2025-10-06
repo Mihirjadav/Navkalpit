@@ -6,6 +6,10 @@ import Services from "./pages/Services";
 import AboutUs from "./pages/AboutUs";
 import Contact  from "./pages/Contact";
 import Products from "./pages/Products";
+import Blogs from "./pages/Blogs";
+import Faq from "./pages/Faq";
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin";
 
 function App() {
   return (
@@ -17,6 +21,10 @@ function App() {
           <Route path="/products" element={<Products/>} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
         </Routes>
       </Layout>
     </Router>

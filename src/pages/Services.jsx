@@ -1,102 +1,110 @@
 import React from "react";
-import {
-  FaDesktop,
-  FaMicrochip,
-  FaTools,
-  FaGamepad,
-  FaNetworkWired,
-  FaServer,
-  FaHdd,
-  FaKeyboard,
-} from "react-icons/fa";
-
-const services = [
-  {
-    id: 1,
-    icon: <FaDesktop size={40} className="text-[#FF6F00]" />,
-    title: "Custom PC Builds",
-    description:
-      "Tailored PC builds for gaming, content creation, and professional work.",
-  },
-  {
-    id: 2,
-    icon: <FaMicrochip size={40} className="text-[#FF6F00]" />,
-    title: "Hardware Components",
-    description:
-      "High-quality CPUs, GPUs, RAM, SSDs, and more from top brands.",
-  },
-  {
-    id: 3,
-    icon: <FaTools size={40} className="text-[#FF6F00]" />,
-    title: "PC Repair & Upgrade",
-    description:
-      "Expert repair and upgrade services to boost your system's performance.",
-  },
-  {
-    id: 4,
-    icon: <FaGamepad size={40} className="text-[#FF6F00]" />,
-    title: "Gaming Setup Consultation",
-    description:
-      "Get the best advice for your ultimate gaming setup and accessories.",
-  },
-  {
-    id: 5,
-    icon: <FaNetworkWired size={40} className="text-[#FF6F00]" />,
-    title: "Networking & Routers",
-    description:
-      "Setup high-speed wired and wireless networks for home or office.",
-  },
-  {
-    id: 6,
-    icon: <FaServer size={40} className="text-[#FF6F00]" />,
-    title: "Server & Storage Solutions",
-    description:
-      "Reliable server hardware and storage solutions for businesses.",
-  },
-  {
-    id: 7,
-    icon: <FaHdd size={40} className="text-[#FF6F00]" />,
-    title: "Data Recovery & Backup",
-    description:
-      "Recover lost data and implement backup solutions for safety.",
-  },
-  {
-    id: 8,
-    icon: <FaKeyboard size={40} className="text-[#FF6F00]" />,
-    title: "Peripheral Setup",
-    description:
-      "Setup and optimize monitors, keyboards, mice, and other peripherals.",
-  },
-];
+import { GiCircuitry, GiSolderingIron } from "react-icons/gi";
+import { SiAltiumdesigner } from "react-icons/si";
 
 const Services = () => {
   return (
-    <div className="bg-[#121212] min-h-screen">
-      {/* Hero Section */}
-      <section className="text-center py-16 px-6 bg-gradient-to-r from-[#121212] via-[#1F2937] to-[#121212]">
-        <h1 className="text-4xl sm:text-5xl font-bold text-[#FF6F00] mb-4">
-          Our Services
+    <div className="bg-white text-black">
+      {/* Header */}
+      <section className="py-16 px-6 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
+          Our Manufacturing Services
         </h1>
-        <p className="text-[#E0E0E0] text-lg sm:text-xl max-w-2xl mx-auto">
-          Explore our wide range of computer hardware services to keep your
-          system running efficiently and optimize your tech experience.
+        <p className="text-gray-600 max-w-3xl mx-auto">
+          From single prototypes to full production runs, we provide a
+          comprehensive suite of services to bring your electronic designs to
+          life.
         </p>
       </section>
 
-      {/* Services Cards */}
-      <section className="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="bg-[#1F2937] rounded-2xl p-6 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 shadow-lg"
-          >
-            <div className="mb-4">{service.icon}</div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {service.title}
-            </h3>
-            <p className="text-[#E0E0E0] mb-4">{service.description}</p>
-          </div>
-        ))}
+      {/* PCB Prototyping (text left, image right) */}
+      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
+            <span className="p-2 rounded-full bg-[#00c4ff] text-white">
+              <GiCircuitry />
+            </span>{" "}
+            PCB Prototyping
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Fast, affordable, and high-quality PCB prototypes. We help you test
+            your designs quickly with a wide range of materials and finishes.
+          </p>
+          <button className="px-4 py-2 bg-[#00c4ff] text-black rounded-md">
+            Request a Quote
+          </button>
+        </div>
+        <div className="flex justify-center md:justify-end">
+          {/* <img
+            src={pcbProtoImg}
+            alt="PCB Prototyping"
+            className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
+          /> */}
+        </div>
+      </section>
+
+      {/* PCB Assembly (image left, text right) */}
+      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="order-2 md:order-1 flex justify-center md:justify-start">
+          {/* <img
+            src={pcbAssemblyImg}
+            alt="PCB Assembly"
+            className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
+          /> */}
+        </div>
+        <div className="order-1 md:order-2">
+          <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
+            <span className="p-2 rounded-full bg-[#00c4ff] text-white">
+              <GiSolderingIron />
+            </span>{" "}
+            PCB Assembly (PCBA)
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Full turnkey and consigned assembly services. Our automated process
+            ensures precision for SMT and through-hole components.
+          </p>
+          <button className="px-4 py-2 bg-[#00c4ff] text-black rounded-md">
+            Request a Quote
+          </button>
+        </div>
+      </section>
+
+      {/* Advanced Capabilities (text left, image right) */}
+      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
+            <span className="p-2 rounded-full bg-[#00c4ff] text-white">
+              <SiAltiumdesigner />
+            </span>{" "}
+            Advanced Capabilities
+          </h3>
+          <p className="text-gray-700 mb-4">
+            We handle complex requirements including multi-layer boards,
+            flexible PCBs, rigid-flex, and advanced materials.
+          </p>
+          <button className="px-4 py-2 bg-[#00c4ff] text-black rounded-md">
+            Request a Quote
+          </button>
+        </div>
+        <div className="flex justify-center md:justify-end">
+          {/* <img
+            src={advancedImg}
+            alt="Advanced Capabilities"
+            className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
+          /> */}
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section className="py-16 bg-gray-100 text-black text-center">
+        <h2 className="text-3xl font-semibold mb-3">Ready to Fabricate?</h2>
+        <p className="max-w-2xl mx-auto mb-6">
+          Our intuitive online platform makes it easy to upload your files and
+          configure your boards. Get an instant quote today.
+        </p>
+        <button className="px-5 py-2 bg-white text-[#1568ff] rounded-md font-semibold">
+          Get an Instant Quote
+        </button>
       </section>
     </div>
   );

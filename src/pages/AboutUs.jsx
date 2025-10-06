@@ -2,9 +2,11 @@ import React from "react";
 import team1 from "/assets/images/user.jpg";
 import team2 from "/assets/images/CEO.jpg";
 import team3 from "/assets/images/founder.jpg";
+import aboutImage from "/assets/images/AboutUs.png";
+import { FiTarget, FiAward, FiUsers } from "react-icons/fi";
 
 const AboutUs = () => {
-  // ✅ Team Members as an array of objects
+  
   const teamMembers = [
     {
       name: "Sneha Sigh",
@@ -24,90 +26,105 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="bg-[#121212] text-[#E0E0E0] min-h-screen">
+    <div className="bg-white text-black">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#121212] via-[#1F2937] to-[#121212] py-20 px-6 text-center">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#FF6F00] mb-4">
+      <section className="py-20 px-6 text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
           About Navkalpit
         </h1>
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl md:text-2xl text-[#E0E0E0]">
-          We are dedicated to providing high-quality computer hardware solutions,
-          custom PC builds, and expert services to enhance your technology experience.
+        <p className="max-w-3xl mx-auto text-gray-600 text-lg sm:text-xl md:text-2xl">
+          We are engineers at heart, dedicated to empowering innovation by
+          providing fast, reliable, and high-quality PCB manufacturing services.
         </p>
-        <button className="mt-8 px-8 py-3 bg-[#FF6F00] hover:bg-[#e65c00] rounded-xl font-semibold text-white text-lg transition">
-          Contact Us
-        </button>
       </section>
 
-      {/* Company Story Section */}
+      {/* Origin / Two-column story */}
       <section className="max-w-7xl mx-auto py-16 px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#FF6F00] mb-4">
-            Our Story
-          </h2>
-          <p className="text-[#E0E0E0] mb-4">
-            Navkalpit started with a passion for technology and a mission to bring
-            high-performance computer hardware and custom solutions to enthusiasts,
-            professionals, and gamers alike.
+          <h2 className="text-2xl font-bold mb-4">Our Origin</h2>
+          <p className="text-gray-700 mb-4">
+            Founded by a team of electronics engineers, Navkalpit was born from
+            a firsthand understanding of the challenges in hardware development.
+            Long lead times, inconsistent quality, and high costs were constant
+            hurdles. We knew there had to be a better way.
           </p>
-          <p className="text-[#E0E0E0]">
-            Over the years, we have grown into a trusted provider of quality components,
-            expert builds, and technical support. Our goal is to empower every user
-            with the perfect system.
+          <p className="text-gray-700 mb-4">
+            We built Navkalpit to be the service we always wished we had: a
+            platform that combines cutting-edge technology with a passion for
+            customer success. Our goal is to remove the friction from PCB
+            manufacturing, allowing innovators to focus on what they do
+            best—creating the future.
+          </p>
+          <p className="text-gray-700">
+            Today, we serve thousands of engineers, startups, and hobbyists
+            worldwide, but our mission remains unchanged: to make custom circuit
+            board manufacturing accessible, fast, and flawless.
           </p>
         </div>
-        <img
-          src="/assets/images/AboutUs.png"
-          alt="About Us"
-          className="w-full rounded-2xl shadow-lg object-cover"
-        />
-      </section>
 
-      {/* Mission & Vision */}
-      <section className="bg-[#1F2937] py-16 px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#FF6F00] mb-10">
-          Our Mission & Vision
-        </h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 bg-[#121212] rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-semibold mb-3 text-white">Mission</h3>
-            <p className="text-[#E0E0E0]">
-              To provide top-quality hardware and personalized solutions that enhance
-              user experience and empower technology enthusiasts worldwide.
-            </p>
-          </div>
-          <div className="p-6 bg-[#121212] rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
-            <h3 className="text-xl font-semibold mb-3 text-white">Vision</h3>
-            <p className="text-[#E0E0E0]">
-              To become a leading provider of innovative, high-performance computer
-              solutions recognized for reliability, expertise, and customer satisfaction.
-            </p>
-          </div>
+        <div className="flex justify-center md:justify-end">
+          <img
+            src={aboutImage}
+            alt="Server racks and wiring"
+            className="w-full md:w-4/5 rounded-2xl shadow-xl object-cover"
+          />
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="max-w-7xl mx-auto py-16 px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#FF6F00] mb-10">
-          Meet Our Team
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {teamMembers.map((member, idx) => (
-            <div
-              key={idx}
-              className="bg-[#1F2937] rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-32 h-32 mx-auto rounded-full mb-4 object-cover"
-              />
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {member.name}
-              </h3>
-              <p className="text-[#E0E0E0]">{member.position}</p>
+      {/* Three feature icons row */}
+      <section className="bg-gray-50 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+                <FiTarget className="h-6 w-6" />
+              </div>
+              <h4 className="font-semibold mb-2">Our Mission</h4>
+              <p className="text-gray-600">
+                To accelerate innovation by providing the fastest, most
+                reliable, and highest quality PCB prototyping and assembly
+                services for engineers and designers.
+              </p>
             </div>
-          ))}
+
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+                <FiAward className="h-6 w-6" />
+              </div>
+              <h4 className="font-semibold mb-2">Our Principles</h4>
+              <p className="text-gray-600">
+                We are driven by a commitment to quality, speed, and
+                customer-centricity. We invest in technology and empower our
+                team to deliver excellence on every order.
+              </p>
+            </div>
+
+            <div className="p-6">
+              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+                <FiUsers className="h-6 w-6" />
+              </div>
+              <h4 className="font-semibold mb-2">Our Team</h4>
+              <p className="text-gray-600">
+                A passionate group of engineers, manufacturing experts, and
+                support specialists dedicated to ensuring your project's success
+                from quote to delivery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-4">Let's Build Together</h3>
+          <p className="text-gray-600 mb-8">
+            Ready to bring your electronic designs to life? Get an instant quote
+            for your PCB project.
+          </p>
+          <button className="px-6 py-2 bg-[#00c4ff] text-black rounded-md font-semibold">
+            Get Instant Quote
+          </button>
         </div>
       </section>
     </div>
