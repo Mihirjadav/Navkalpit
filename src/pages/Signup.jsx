@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import PrimaryButton from "../components/PrimaryButton";
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -85,7 +86,7 @@ const Signup = () => {
               type="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-300"
+              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#26285b]/30"
               placeholder="m@example.com"
             />
           </div>
@@ -103,12 +104,12 @@ const Signup = () => {
           </div>
 
           <div>
-            <button
+            <PrimaryButton
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg shadow-sm"
+              className="w-full py-3 rounded-lg shadow-sm"
             >
               Create an account
-            </button>
+            </PrimaryButton>
           </div>
         </form>
 

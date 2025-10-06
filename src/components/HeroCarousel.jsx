@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PrimaryButton from "./PrimaryButton";
 
 // Replace these paths with your actual images
 const slides = [
@@ -53,9 +54,11 @@ const HeroCarousel = () => {
             <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#E0E0E0] max-w-2xl">
               {slide.subtitle}
             </p>
-            <button className="mt-6 px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 bg-[#00c4ff] hover:bg-[#00a8d1] rounded-xl font-semibold text-black text-sm sm:text-base md:text-lg">
-              Get an Instant Quote
-            </button>
+            <div className="mt-6">
+              <PrimaryButton className="px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4 rounded-xl text-sm sm:text-base md:text-lg">
+                Get an Instant Quote
+              </PrimaryButton>
+            </div>
           </div>
         </div>
       ))}
@@ -67,7 +70,7 @@ const HeroCarousel = () => {
             key={idx}
             onClick={() => setCurrent(idx)}
             className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
-              idx === current ? "bg-[#FF6F00]" : "bg-white/40"
+              idx === current ? "bg-[#26285b]" : "bg-white/40"
             }`}
           ></button>
         ))}

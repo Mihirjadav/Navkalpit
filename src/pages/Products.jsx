@@ -5,37 +5,37 @@ import ProductCard from "../components/ProductCard";
 const products = [
   {
     id: 1,
-    img: "/assets/images/flexible.jpg",
+    img: "/assets/images/6layer.webp",
     name: "Flexible PCB - 4 Layer",
     price: "$125.00",
   },
   {
     id: 2,
-    img: "/assets/images/rigidflex.jpg",
+    img: "/assets/images/8layer.webp",
     name: "Rigid-Flex PCB - 6 Layer",
     price: "$250.50",
   },
   {
     id: 3,
-    img: "/assets/images/multilayer.jpg",
+    img: "/assets/images/aluminium.webp",
     name: "Multi-Layer PCB - 8 Layer",
     price: "$310.00",
   },
   {
     id: 4,
-    img: "/assets/images/aluminum_core.jpg",
+    img: "/assets/images/aluminium.webp",
     name: "Aluminum Core PCB",
     price: "$95.75",
   },
   {
     id: 5,
-    img: "/assets/images/stencil.jpg",
+    img: "/assets/images/6layer.webp",
     name: "SMT Stencil",
     price: "$50.00",
   },
   {
     id: 6,
-    img: "/assets/images/assembly_kit.jpg",
+    img: "/assets/images/assemblykit.webp",
     name: "DIY Assembly Kit",
     price: "$75.00",
   },

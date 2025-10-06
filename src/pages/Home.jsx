@@ -1,5 +1,6 @@
 // src/pages/Home.jsx
 import HeroCarousel from "../components/HeroCarousel";
+import PrimaryButton from "../components/PrimaryButton";
 import ProductCard from "../components/ProductCard";
 import { GiClockwork, GiLabCoat, GiCircuitry } from "react-icons/gi";
 
@@ -110,12 +111,12 @@ const Home = () => {
                 className="w-full"
               />
             </label>
-            <button
+            <PrimaryButton
               type="button"
-              className="inline-block px-6 py-2 bg-[#00c4ff] text-black rounded-md font-semibold"
+              className="inline-block px-6 py-2 rounded-md font-semibold"
             >
               Upload Files Now
-            </button>
+            </PrimaryButton>
           </form>
         </div>
       </section>

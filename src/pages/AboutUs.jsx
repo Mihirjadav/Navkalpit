@@ -2,11 +2,10 @@ import React from "react";
 import team1 from "/assets/images/user.jpg";
 import team2 from "/assets/images/CEO.jpg";
 import team3 from "/assets/images/founder.jpg";
-import aboutImage from "/assets/images/AboutUs.png";
+import aboutImage from "/assets/images/AboutUs.webp";
 import { FiTarget, FiAward, FiUsers } from "react-icons/fi";
 
 const AboutUs = () => {
-  
   const teamMembers = [
     {
       name: "Sneha Sigh",
@@ -122,7 +121,7 @@ const AboutUs = () => {
             Ready to bring your electronic designs to life? Get an instant quote
             for your PCB project.
           </p>
-          <button className="px-6 py-2 bg-[#00c4ff] text-black rounded-md font-semibold">
+          <button className="px-6 py-2 bg-[#26285b] text-white rounded-md font-semibold">
             Get Instant Quote
           </button>
         </div>

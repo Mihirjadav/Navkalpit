@@ -13,22 +13,11 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-[#00c4ff] rounded-md flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                <img
+                  src="/assets/images/Navkalpit_logo.png"
+                  alt="Menu Icon"
                   className="h-6 w-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M3 12h18"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+                />
               <div className="text-2xl font-bold">Navkalpit</div>
             </div>
             <p className="text-sm text-gray-500">

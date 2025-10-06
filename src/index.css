@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+:root {
+  --brand-hover: #26285b;
+}
+
+/* small helper class for consistent hover color */
+.hover-brand:hover {
+  color: var(--brand-hover) !important;
+}
+
+/* apply the brand hover as background on buttons when needed */
+.bg-hover-brand:hover {
+  background-color: var(--brand-hover) !important;
+}
+
+/* make button active state use the brand color */
+button:active,
+.btn:active,
+.primary-btn:active {
+  background-color: var(--brand-hover) !important;
+  color: #ffffff !important;
+}
+
+/* small hover tint utility when tailwind preset not used */
+.bg-brand-tint:hover {
+  background-color: rgba(38, 40, 91, 0.06) !important;
+}
