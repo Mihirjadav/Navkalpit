@@ -1,7 +1,211 @@
 @import "tailwindcss";
 
+/*
+  Theme variables
+  - We use a data attribute on the root: <html data-theme="dark"> to switch.
+  - Defaults (light) are defined on :root; dark overrides are under [data-theme="dark"]
+  - We also provide a few high-specificity helpers to override Tailwind utility classes
+    (like .text-black / .bg-white / .border-gray-100) so existing markup switches
+    without changing all classnames.
+*/
+
 :root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #0f172a; /* slate-900 */
+  --muted: #6b7280; /* gray-500 */
+  --border: #e6e9ef; /* light border */
+  --brand: #26285b; /* primary */
   --brand-hover: #26285b;
+  --accent: #2563eb; /* blue-600 */
+  --muted-surface: #f5f7fb;
+  --overlay: rgba(0, 0, 0, 0.45);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --card-bg: #ffffff;
+  --font-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220; /* dark background */
+  --surface: #0f1724;
+  --text: #e6eef8; /* light text */
+  --muted: #9aa6b2;
+  --border: #1f2a37;
+  --brand: #9fb0ff;
+  --brand-hover: #9fb0ff;
+  --accent: #60a5fa; /* light blue */
+  --muted-surface: #0b1622;
+  --overlay: rgba(0, 0, 0, 0.55);
+  --header-bg: rgba(8, 12, 18, 0.7);
+  --card-bg: #0f1724;
+}
+
+/* Global page colors */
+html,
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font-base);
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* header / surfaces */
+header,
+.bg-white,
+.bg-white\/20 {
+  background-color: var(--header-bg) !important;
+}
+
+.card,
+.bg-white,
+.bg-gray-50 {
+  background-color: var(--card-bg) !important;
+}
+
+/* card variant for consistent surface styling */
+.card {
+  background-color: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  transition: background-color 220ms ease, color 220ms ease,
+    box-shadow 220ms ease, border-color 220ms ease;
+}
+
+/* image surface */
+.card-image {
+  background-color: var(--surface);
+}
+
+/* title and price tokens */
+.card-title {
+  color: var(--text);
+}
+.card-price {
+  color: var(--accent);
+}
+
+/* Text overrides for common Tailwind utility classes used throughout project */
+.text-black {
+  color: var(--text) !important;
+}
+.text-gray-500 {
+  color: var(--muted) !important;
+}
+.text-gray-700 {
+  color: var(--muted) !important;
+}
+.text-gray-900 {
+  color: var(--text) !important;
+}
+
+/* brand utilities */
+.text-brand {
+  color: var(--brand) !important;
+}
+.bg-brand {
+  background-color: var(--brand) !important;
+}
+
+/* icon background used in sidebars */
+.icon-bg {
+  background-color: var(--muted-surface) !important;
+}
+.icon-text {
+  color: var(--brand) !important;
+}
+
+/* hero overlay */
+.hero-overlay {
+  background-color: var(--overlay) !important;
+}
+
+/* carousel indicators */
+.indicator-active {
+  background-color: var(--brand) !important;
+}
+.indicator-inactive {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* border helpers */
+.border-gray-200 {
+  border-color: var(--border) !important;
+}
+
+/* Override Tailwind bracket-hex classes used in the project so they follow theme variables */
+.text-\[\#26285b\] {
+  color: var(--brand) !important;
+}
+.bg-\[\#f5f7fb\] {
+  background-color: var(--muted-surface) !important;
+}
+.bg-\[\#26285b\] {
+  background-color: var(--brand) !important;
+}
+.text-\[\#E0E0E0\] {
+  color: var(--muted) !important;
+}
+.text-\[\#e0e0e0\] {
+  color: var(--muted) !important;
+}
+
+/* Common blue utilities mapping to accent */
+.text-blue-600 {
+  color: var(--accent) !important;
+}
+.bg-blue-600 {
+  background-color: var(--accent) !important;
+}
+
+/* Buttons & inputs that used borders or backgrounds */
+.border-gray-300 {
+  border-color: var(--border) !important;
+}
+.bg-gray-50 {
+  background-color: var(--muted-surface) !important;
+}
+.bg-gray-100 {
+  background-color: var(--muted-surface) !important;
+}
+
+/* Focus ring mapping (generic) */
+.focus-ring,
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 3px rgba(38, 40, 91, 0.12);
+}
+
+/* Primary button follows theme variables */
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  background-color: var(--brand);
+  color: #fff;
+  transition: background-color 160ms ease, transform 120ms ease;
+}
+.primary-btn:hover {
+  background-color: var(--brand-hover);
+}
+.primary-btn:active {
+  transform: translateY(1px);
+}
+.primary-btn:focus {
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+  outline: none;
+}
+
+/* Border overrides */
+.border-gray-100 {
+  border-color: var(--border) !important;
+}
+
+/* Hover brand tint helper */
+.bg-brand-tint:hover {
+  background-color: rgba(38, 40, 91, 0.06) !important;
 }
 
 /* small helper class for consistent hover color */
@@ -22,7 +226,12 @@ button:active,
   color: #ffffff !important;
 }
 
-/* small hover tint utility when tailwind preset not used */
-.bg-brand-tint:hover {
-  background-color: rgba(38, 40, 91, 0.06) !important;
+/* focus rings tuned for dark/light */
+.focus-ring {
+  box-shadow: 0 0 0 3px rgba(38, 40, 91, 0.12);
+}
+
+/* small utilities to ensure icon buttons follow theme */
+.icon-btn {
+  color: var(--text) !important;
 }

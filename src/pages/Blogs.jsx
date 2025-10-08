@@ -30,7 +30,7 @@ const posts = [
 
 export default function Blogs() {
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="min-h-screen">
       <header className="py-16">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-2">
           Navkalpit Blog
@@ -45,7 +45,7 @@ export default function Blogs() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="bg-white border rounded-lg shadow-sm overflow-hidden"
+              className="card border rounded-lg shadow-sm overflow-hidden"
             >
               <div className="h-48 w-full overflow-hidden">
                 <img

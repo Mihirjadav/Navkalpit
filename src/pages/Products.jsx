@@ -50,7 +50,7 @@ const Products = () => {
   );
 
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="min-h-screen">
       <section className="max-w-7xl mx-auto py-12 px-6">
         <h1 className="text-3xl font-extrabold mb-1">Our Products</h1>
         <p className="text-gray-600 mb-6">
@@ -63,7 +63,7 @@ const Products = () => {
           <aside className="lg:col-span-3">
             <div className="sticky top-28">
               <h4 className="font-semibold mb-3">Filters</h4>
-              <div className="bg-white border rounded-md p-4">
+              <div className="card border rounded-md p-4">
                 <div className="mb-4">
                   <h5 className="font-medium mb-2">Category</h5>
                   <label className="flex items-center gap-2 text-sm">

@@ -24,7 +24,7 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-md border border-gray-100 p-8">
+      <div className="w-full max-w-md card rounded-2xl shadow-md p-8">
         <div className="flex flex-col items-center">
           <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
             {/* small icon placeholder */}
@@ -86,7 +86,7 @@ const Signup = () => {
               type="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-1 focus:ring-[#26285b]/30"
+              className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus-ring"
               placeholder="m@example.com"
             />
           </div>

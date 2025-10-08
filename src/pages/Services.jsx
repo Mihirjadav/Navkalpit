@@ -10,7 +10,7 @@ const advancedImg = "/assets/images/febrication.webp";
 
 const Services = () => {
   return (
-    <div className="bg-white text-black">
+    <div>
       {/* Header */}
       <section className="py-16 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
@@ -27,7 +27,7 @@ const Services = () => {
       <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
-            <span className="p-2 rounded-full bg-[#26285b] text-white">
+            <span className="p-2 rounded-full bg-brand text-white">
               <GiCircuitry />
             </span>{" "}
             PCB Prototyping
@@ -60,7 +60,7 @@ const Services = () => {
         </div>
         <div className="order-1 md:order-2">
           <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
-            <span className="p-2 rounded-full bg-[#26285b] text-white">
+            <span className="p-2 rounded-full bg-brand text-white">
               <GiSolderingIron />
             </span>{" "}
             PCB Assembly (PCBA)
@@ -79,7 +79,7 @@ const Services = () => {
       <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
-            <span className="p-2 rounded-full bg-[#26285b] text-white">
+            <span className="p-2 rounded-full bg-brand text-white">
               <SiAltiumdesigner />
             </span>{" "}
             Advanced Capabilities
@@ -102,9 +102,11 @@ const Services = () => {
       </section>
 
       {/* CTA band */}
-      <section className="py-16 bg-gray-100 text-black text-center">
-        <h2 className="text-3xl font-semibold mb-3">Ready to Fabricate?</h2>
-        <p className="max-w-2xl mx-auto mb-6">
+      <section className="py-16 bg-gray-100 text-center">
+        <h2 className="text-3xl font-semibold mb-3 card-title">
+          Ready to Fabricate?
+        </h2>
+        <p className="max-w-2xl mx-auto mb-6 text-gray-500">
           Our intuitive online platform makes it easy to upload your files and
           configure your boards. Get an instant quote today.
         </p>

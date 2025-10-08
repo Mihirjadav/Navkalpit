@@ -34,7 +34,7 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[60vh] sm:h-screen overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
@@ -47,11 +47,11 @@ const HeroCarousel = () => {
             alt={slide.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 hero-overlay flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-snug">
               {slide.title}
             </h1>
-            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-[#E0E0E0] max-w-2xl">
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-500 max-w-2xl">
               {slide.subtitle}
             </p>
             <div className="mt-6">
@@ -70,7 +70,7 @@ const HeroCarousel = () => {
             key={idx}
             onClick={() => setCurrent(idx)}
             className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full ${
-              idx === current ? "bg-[#26285b]" : "bg-white/40"
+              idx === current ? "indicator-active" : "indicator-inactive"
             }`}
           ></button>
         ))}

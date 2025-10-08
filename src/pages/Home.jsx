@@ -6,36 +6,36 @@ import { GiClockwork, GiLabCoat, GiCircuitry } from "react-icons/gi";
 
 const Home = () => {
   return (
-    <div className="bg-white text-black">
+    <div>
       {/* Hero Section */}
       <HeroCarousel />
 
       {/* Why Choose Navkalpit Section */}
       <section className="bg-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-black mb-6">
+          <h2 className="text-3xl font-bold text-center card-title mb-6">
             Why Choose Navkalpit?
           </h2>
-          <p className="text-center text-black max-w-3xl mx-auto mb-12">
+          <p className="text-center text-gray-500 max-w-3xl mx-auto mb-12">
             We are committed to providing engineers and hobbyists with top-tier
             circuit boards.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
-                <GiClockwork className="h-6 w-6 text-[#00c4ff]" />
+            <div className="card p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
+                <GiClockwork className="h-6 w-6 text-blue-600" />
                 Fast Turnaround
               </h3>
-              <p className="text-gray-700">
+              <p className="text-gray-500">
                 Get your PCB prototypes in as little as 24 hours. We optimize
                 our process for speed and efficiency.
               </p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
-                <GiLabCoat className="h-6 w-6 text-[#00c4ff]" />
+              <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
+                <GiLabCoat className="h-6 w-6 text-blue-600" />
                 Guaranteed Quality
               </h3>
               <p className="text-gray-700">
@@ -45,8 +45,8 @@ const Home = () => {
             </div>
 
             <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
-                <GiCircuitry className="h-6 w-6 text-[#00c4ff]" />
+              <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
+                <GiCircuitry className="h-6 w-6 text-blue-600" />
                 Advanced Capabilities
               </h3>
               <p className="text-gray-700">
@@ -59,7 +59,7 @@ const Home = () => {
       </section>
       {/* Our Core Services Section */}
       <section className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-center text-black mb-4">
+        <h2 className="text-3xl font-bold text-center card-title mb-4">
           Our Core Services
         </h2>
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
@@ -67,9 +67,9 @@ const Home = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
-              <GiClockwork className="h-6 w-6 text-[#00c4ff]" />
+          <div className="card p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
+              <GiClockwork className="h-6 w-6 text-blue-600" />
               PCB Prototyping
             </h3>
             <p className="text-gray-700 mb-6">
@@ -79,9 +79,9 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-black mb-3 flex items-center gap-2">
-              <GiCircuitry className="h-6 w-6 text-[#00c4ff]" />
+          <div className="card p-6 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
+              <GiCircuitry className="h-6 w-6 text-blue-600" />
               PCB Assembly
             </h3>
             <p className="text-gray-700 mb-6">
@@ -94,8 +94,8 @@ const Home = () => {
       </section>
       {/* Ready to Start Your Project Section */}
       <section className="max-w-7xl mx-auto py-16 px-6">
-        <div className="bg-[#f8fafc] p-8 rounded-lg text-center">
-          <h2 className="text-3xl font-bold text-black mb-4">
+        <div className="card p-8 rounded-lg text-center">
+          <h2 className="text-3xl font-bold card-title mb-4">
             Ready to Start Your Project?
           </h2>
           <p className="text-gray-700 max-w-2xl mx-auto mb-6">

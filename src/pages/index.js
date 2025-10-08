@@ -9,3 +9,8 @@ export { default as Signup } from "./Signup";
 export { default as Signin } from "./Signin";
 export { default as AdminProducts } from "./AdminProducts";
 export { default as AdminDashboard } from "./AdminDashboard";
+export { default as AdminAddProduct } from "./admin/AddProduct";
+export { default as AdminManageProducts } from "./admin/ManageProducts";
+export { default as AdminOrders } from "./admin/Orders";
+export { default as AdminManageBlogs } from "./admin/ManageBlogs";
+export { default as AdminNewBlog } from "./admin/NewBlog";

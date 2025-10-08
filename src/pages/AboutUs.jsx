@@ -25,7 +25,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="bg-white text-black">
+    <div>
       {/* Hero Section */}
       <section className="py-20 px-6 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
@@ -75,7 +75,7 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div className="p-6">
-              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
                 <FiTarget className="h-6 w-6" />
               </div>
               <h4 className="font-semibold mb-2">Our Mission</h4>
@@ -87,7 +87,7 @@ const AboutUs = () => {
             </div>
 
             <div className="p-6">
-              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
                 <FiAward className="h-6 w-6" />
               </div>
               <h4 className="font-semibold mb-2">Our Principles</h4>
@@ -99,7 +99,7 @@ const AboutUs = () => {
             </div>
 
             <div className="p-6">
-              <div className="w-16 h-16 mx-auto bg-[#00c4ff] text-white rounded-full flex items-center justify-center mb-4">
+              <div className="w-16 h-16 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center mb-4">
                 <FiUsers className="h-6 w-6" />
               </div>
               <h4 className="font-semibold mb-2">Our Team</h4>
@@ -121,7 +121,7 @@ const AboutUs = () => {
             Ready to bring your electronic designs to life? Get an instant quote
             for your PCB project.
           </p>
-          <button className="px-6 py-2 bg-[#26285b] text-white rounded-md font-semibold">
+          <button className="px-6 py-2 bg-brand text-white rounded-md font-semibold">
             Get Instant Quote
           </button>
         </div>

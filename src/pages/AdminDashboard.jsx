@@ -7,7 +7,7 @@ import {
 } from "react-icons/fi";
 
 const StatCard = ({ title, value, delta, icon, accent }) => (
-  <div className="bg-white rounded-xl shadow-sm border p-6 flex-1 min-w-[200px] relative overflow-hidden">
+  <div className="card rounded-xl shadow-sm border p-6 flex-1 min-w-[200px] relative overflow-hidden">
     <div className={`absolute left-0 top-0 h-full w-1 ${accent}`} />
     <div className="absolute right-4 top-4 text-gray-400">{icon}</div>
     <div>
@@ -76,7 +76,7 @@ const AdminDashboard = () => {
         <div className="flex items-center gap-3">
           <input
             placeholder="Search orders, products..."
-            className="border border-gray-200 rounded-md px-3 py-2 text-sm w-64"
+            className="border border-gray-200 rounded-md px-3 py-2 text-sm max-w-xs w-full md:w-64"
           />
         </div>
       </div>
@@ -87,28 +87,28 @@ const AdminDashboard = () => {
           value={stats.revenue}
           delta={stats.revenueDelta}
           icon={<FiTrendingUp />}
-          accent="bg-[#f1871a]"
+          accent="bg-brand"
         />
         <StatCard
           title="Sales"
           value={stats.sales}
           delta={stats.salesDelta}
           icon={<FiShoppingCart />}
-          accent="bg-[#26285b]"
+          accent="bg-brand"
         />
         <StatCard
           title="New Customers"
           value={stats.customers}
           delta={stats.customersDelta}
           icon={<FiUserPlus />}
-          accent="bg-[#f1871a]"
+          accent="bg-brand"
         />
         <StatCard
           title="Products in Stock"
           value={stats.productsInStock}
           delta={stats.productsDelta}
           icon={<FiBox />}
-          accent="bg-[#26285b]"
+          accent="bg-brand"
         />
       </div>
       <div className="bg-white rounded-xl shadow-sm border p-6">

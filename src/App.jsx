@@ -14,6 +14,11 @@ import {
   Signin,
   AdminProducts,
   AdminDashboard,
+  AdminAddProduct,
+  AdminManageProducts,
+  AdminOrders,
+  AdminManageBlogs,
+  AdminNewBlog,
 } from "./pages";
 
 function App() {
@@ -38,6 +43,11 @@ function App() {
           <Route index element={<AdminDashboard />} />
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="products" element={<AdminProducts />} />
+          <Route path="products/manage" element={<AdminManageProducts />} />
+          <Route path="products/new" element={<AdminAddProduct />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="blogs" element={<AdminManageBlogs />} />
+          <Route path="blogs/new" element={<AdminNewBlog />} />
         </Route>
       </Routes>
     </Router>

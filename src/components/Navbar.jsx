@@ -3,12 +3,16 @@ import { NavLink } from "react-router-dom";
 // MUI icons (install with: npm install @mui/icons-material @mui/material @emotion/react @emotion/styled)
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme, font, setFont } = useTheme();
 
-  const linkClass = ({ isActive }) =>
-    isActive ? "text-[#26285b] font-semibold" : "text-black";
+  const navLinkClass = ({ isActive }) =>
+    isActive ? "text-brand font-semibold hover-brand" : "hover-brand";
 
   return (
     <>
@@ -25,46 +29,70 @@ const Navbar = () => {
                 alt="Navkalpit logo"
                 className="h-8 w-8 object-contain"
               />
-              <h1 className="text-2xl font-bold text-black hidden sm:block">
+              <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
               </h1>
             </NavLink>
           </div>
 
           {/* Inline Menu (desktop) */}
-          <nav className="hidden md:flex items-center gap-6 text-black">
-            <NavLink to="/" className={linkClass + " hover-brand"}>
+          <nav className="hidden md:flex items-center gap-6">
+            <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
-            <NavLink to="/aboutus" className={linkClass + " hover-brand"}>
+            <NavLink to="/aboutus" className={navLinkClass}>
               About
             </NavLink>
-            <NavLink to="/blogs" className={linkClass + " hover-brand"}>
+            <NavLink to="/blogs" className={navLinkClass}>
               Blogs
             </NavLink>
-            <NavLink to="/services" className={linkClass + " hover-brand"}>
+            <NavLink to="/services" className={navLinkClass}>
               Service
             </NavLink>
-            <NavLink to="/products" className={linkClass + " hover-brand"}>
+            <NavLink to="/products" className={navLinkClass}>
               Products
             </NavLink>
-            <NavLink to="/library" className={linkClass + " hover-brand"}>
+            <NavLink to="/library" className={navLinkClass}>
               Library
             </NavLink>
-            <NavLink to="/faq" className={linkClass + " hover-brand"}>
+            <NavLink to="/faq" className={navLinkClass}>
               FAQ
             </NavLink>
-            <NavLink to="/contact" className={linkClass + " hover-brand"}>
+            <NavLink to="/contact" className={navLinkClass}>
               Contact
             </NavLink>
           </nav>
 
           {/* Icons: User & Cart */}
           <div className="hidden md:flex items-center gap-4">
+            {/* Theme toggle */}
+            <button
+              aria-label="Toggle theme"
+              onClick={() => toggleTheme()}
+              className="p-2 rounded-md bg-transparent hover:bg-brand-tint focus:outline-none icon-btn"
+            >
+              {theme === "dark" ? (
+                <LightModeIcon style={{ fontSize: 20 }} />
+              ) : (
+                <DarkModeIcon style={{ fontSize: 20 }} />
+              )}
+            </button>
+
+            {/* Font selector */}
+            <select
+              aria-label="Select font"
+              value={font}
+              onChange={(e) => setFont(e.target.value)}
+              className="text-sm p-1 rounded-md bg-transparent border border-transparent focus:outline-none"
+            >
+              <option value="system">System</option>
+              <option value="serif">Serif</option>
+              <option value="mono">Monospace</option>
+            </select>
             <NavLink to="/signup" aria-label="Signup" className="p-0">
               <button
                 aria-label="User Signup"
-                className="text-black p-2 rounded-md bg-transparent hover:bg-brand-tint focus:outline-none focus:ring-2 focus:ring-[#26285b]/30"
+                className="p-2 rounded-md bg-transparent hover:bg-brand-tint focus:outline-none focus-ring icon-btn"
               >
                 <PersonIcon style={{ fontSize: 22 }} />
               </button>
@@ -72,7 +100,7 @@ const Navbar = () => {
             <NavLink to="/cart" aria-label="CartLink" className="p-0">
               <button
                 aria-label="Cart"
-                className="text-black p-2 rounded-md bg-transparent hover:bg-brand-tint focus:outline-none focus:ring-2 focus:ring-[#26285b]/30"
+                className="p-2 rounded-md bg-transparent hover:bg-brand-tint focus:outline-none focus-ring icon-btn"
               >
                 <ShoppingCartIcon style={{ fontSize: 22 }} />
               </button>
@@ -81,7 +109,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button (keeps black color) */}
           <button
-            className="md:hidden text-black focus:outline-none"
+            className="md:hidden focus:outline-none icon-btn"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >
@@ -116,59 +144,75 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white px-4 pb-4 space-y-2 text-black">
+        <div className="md:hidden card px-4 pb-4 space-y-2">
+          <div className="flex items-center gap-2">
+            <button
+              aria-label="Toggle theme"
+              onClick={() => toggleTheme()}
+              className="p-2 rounded-md bg-transparent hover:bg-brand-tint icon-btn"
+            >
+              {theme === "dark" ? (
+                <LightModeIcon style={{ fontSize: 18 }} />
+              ) : (
+                <DarkModeIcon style={{ fontSize: 18 }} />
+              )}
+            </button>
+            <span className="text-sm">
+              {theme === "dark" ? "Dark" : "Light"}
+            </span>
+          </div>
           <NavLink
             to="/"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Home
           </NavLink>
           <NavLink
             to="/about"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             About
           </NavLink>
           <NavLink
             to="/blogs"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Blogs
           </NavLink>
           <NavLink
             to="/service"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Service
           </NavLink>
           <NavLink
             to="/products"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Products
           </NavLink>
           <NavLink
             to="/library"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Library
           </NavLink>
           <NavLink
             to="/faq"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             FAQ
           </NavLink>
           <NavLink
             to="/contact"
-            className={linkClass}
+            className={navLinkClass}
             onClick={() => setMenuOpen(false)}
           >
             Contact
@@ -181,7 +225,7 @@ const Navbar = () => {
             >
               <button
                 aria-label="User Signup"
-                className="text-black p-2 rounded-md hover:bg-gray-100 hover-brand"
+                className="icon-btn p-2 rounded-md hover:bg-brand-tint hover-brand"
               >
                 <PersonIcon style={{ fontSize: 18 }} />
               </button>
@@ -193,7 +237,7 @@ const Navbar = () => {
             >
               <button
                 aria-label="Cart"
-                className="text-black p-2 rounded-md hover:bg-gray-100 hover-brand"
+                className="icon-btn p-2 rounded-md hover:bg-brand-tint hover-brand"
               >
                 <ShoppingCartIcon style={{ fontSize: 18 }} />
               </button>

@@ -3,7 +3,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="min-h-screen">
       {/* Hero Section with background image */}
       <section
         className="w-full h-64 md:h-96 bg-center bg-cover flex items-center"
@@ -70,7 +70,7 @@ const Contact = () => {
 
           {/* Right - Contact Form */}
           <div className="lg:col-span-7 flex justify-end">
-            <div className="w-full max-w-lg bg-white border border-gray-100 rounded-xl shadow-lg p-6">
+            <div className="w-full max-w-lg card border rounded-xl shadow-lg p-6">
               <h3 className="text-lg font-semibold mb-2">Send us a Message</h3>
               <p className="text-sm text-gray-500 mb-4">
                 For technical questions, order status, or general inquiries.

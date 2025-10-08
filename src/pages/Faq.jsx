@@ -38,7 +38,7 @@ const Faq = () => {
   const [open, setOpen] = useState(null);
 
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="min-h-screen">
       {/* Hero */}
       <header className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center px-6">

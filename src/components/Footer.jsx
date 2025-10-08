@@ -7,17 +7,17 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-gray-700 border-t">
+    <footer className="border-t">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
           {/* Logo + tagline */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-                <img
-                  src="/assets/images/Navkalpit_logo.png"
-                  alt="Menu Icon"
-                  className="h-6 w-6 text-white"
-                />
+              <img
+                src="/assets/images/Navkalpit_logo.png"
+                alt="Menu Icon"
+                className="h-6 w-6 text-white"
+              />
               <div className="text-2xl font-bold">Navkalpit</div>
             </div>
             <p className="text-sm text-gray-500">
