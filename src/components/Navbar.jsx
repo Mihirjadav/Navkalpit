@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // MUI icons (install with: npm install @mui/icons-material @mui/material @emotion/react @emotion/styled)
 import PersonIcon from "@mui/icons-material/Person";
@@ -11,10 +11,6 @@ import Navkalpit_logo from "../assets/images/Navkalpit_logo.png";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme, font, setFont } = useTheme();
-  useEffect(() => {
-  document.documentElement.setAttribute("data-theme", theme);
-}, [theme]);
-
 
   const navLinkClass = ({ isActive }) =>
     isActive ? "text-brand font-semibold hover-brand" : "hover-brand";
@@ -149,7 +145,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-white dark:bg-[#1E1F26] text-black dark:text-white rounded-lg shadow-md">
+        <div className="md:hidden card px-4 pb-4 space-y-2">
           <div className="flex items-center gap-2">
             <button
               aria-label="Toggle theme"
