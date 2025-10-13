@@ -11,7 +11,10 @@ const ProductCard = ({ img, name, price }) => {
       {/* Product Info */}
       <div className="p-4 flex flex-col">
         <h3 className="text-lg font-medium card-title mb-2">{name}</h3>
-        <p className="font-semibold card-price">{price}</p>
+        <div className="flex justify-center gap-28">
+          <p className="font-semibold card-price">{price}</p>
+        <button className="border px-2 cursor-pointer">Buy Now</button>
+        </div>
       </div>
     </div>
   );

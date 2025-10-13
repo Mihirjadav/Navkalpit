@@ -62,8 +62,8 @@ const Products = () => {
           {/* Filters - left */}
           <aside className="lg:col-span-3">
             <div className="sticky top-28">
-              <h4 className="font-semibold mb-3">Filters</h4>
-              <div className="card border rounded-md p-4">
+              {/* <h4 className="font-semibold mb-3">Filters</h4> */}
+              <div className="">
                 <div className="mb-4">
                   <h5 className="font-medium mb-2">Category</h5>
                   <label className="flex items-center gap-2 text-sm">
