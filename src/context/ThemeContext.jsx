@@ -19,7 +19,7 @@ export function ThemeProvider({ children }) {
     () =>
       getStoredTheme() ||
       (typeof window !== "undefined" &&
-      document.documentElement.getAttribute("data-theme") === "light"
+      document.documentElement.getAttribute("data-theme") === "dark"
         ? "dark"
         : "light")
   );

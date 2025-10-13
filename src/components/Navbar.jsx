@@ -21,18 +21,18 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8 h-16">
           {/* Brand / Company name */}
           <div className="flex items-center mr-6">
-            <NavLink
+           <NavLink
               to="/"
               className="flex items-center gap-3 hover:opacity-90"
             >
               <img
                 src={Navkalpit_logo}
                 alt="Navkalpit logo"
-                className="h-full max-h-52 w-auto object-contain"
+                className="h-15 w-auto object-contain"
               />
-              {/* <h1 className="text-2xl font-bold text-brand hidden sm:block">
+              <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
-              </h1> */}
+              </h1>
             </NavLink>
           </div>
 
