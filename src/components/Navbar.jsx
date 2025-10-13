@@ -6,6 +6,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useTheme } from "../context/ThemeContext";
+import Navkalpit_logo from "../assets/images/Navkalpit_logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,8 +17,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-50 bg-white/20 backdrop-blur-md border-b border-gray-100">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8">
+      <header className="fixed inset-x-0 top-0 z-50 bg-white/20 backdrop-blur-md border-gray-100 border-b">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8 h-16">
           {/* Brand / Company name */}
           <div className="flex items-center mr-6">
             <NavLink
@@ -25,13 +26,13 @@ const Navbar = () => {
               className="flex items-center gap-3 hover:opacity-90"
             >
               <img
-                src="/assets/images/Navkalpit_logo.png"
+                src={Navkalpit_logo}
                 alt="Navkalpit logo"
-                className="h-8 w-8 object-contain"
+                className="h-full max-h-52 w-auto object-contain"
               />
-              <h1 className="text-2xl font-bold text-brand hidden sm:block">
+              {/* <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
-              </h1>
+              </h1> */}
             </NavLink>
           </div>
 
