@@ -145,10 +145,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 px-4 pb-3 pt-4git shadow-md z-40">
+        <div
+          className={`md:hidden w-full ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white/80 text-gray-800"
+            } backdrop-blur-sm border-b border-gray-200 px-4 pb-3 pt-4 shadow-md z-40`}
+        >
           {/* Mobile menu header: Home and Theme toggle */}
-          <div className="flex items-center justify-between ">
-            {/* Home Link */}
+          <div className="flex items-center justify-between mb-2">
             <NavLink
               to="/"
               onClick={() => setMenuOpen(false)}
@@ -157,7 +159,6 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            {/* Theme toggle */}
             <button
               aria-label="Toggle theme"
               onClick={toggleTheme}
@@ -171,11 +172,9 @@ const Navbar = () => {
             </button>
           </div>
 
-
           {/* Nav Links */}
           <div className="flex flex-col space-y-2 text-sm font-medium">
             {[
-              // ["Home", "/"],
               ["About", "/aboutus"],
               ["Blogs", "/blogs"],
               ["Service", "/services"],
@@ -216,7 +215,6 @@ const Navbar = () => {
           </div>
         </div>
       )}
-
     </>
   );
 };
