@@ -28,7 +28,7 @@ const Navbar = () => {
               <img
                 src={Navkalpit_logo}
                 alt="Navkalpit logo"
-                className="h-28 w-auto object-contain"
+                className="h-40 w-auto object-contain"
               />
               {/* <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
@@ -37,7 +37,7 @@ const Navbar = () => {
           </div>
 
           {/* Inline Menu (desktop) */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-5">
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>

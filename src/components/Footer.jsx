@@ -4,6 +4,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
+import {NavLink} from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -30,9 +31,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-3 text-gray-500">
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Contact</li>
+              {/* <li>About Us</li> */}
+              {/* <li>Services</li> */}
+              {/* <li>Contact</li> */}
+              <NavLink to="/aboutus">About Us</NavLink><br />
+              <NavLink to="/services">Services</NavLink><br/>
+              <NavLink to="/contact">Contact</NavLink>
             </ul>
           </div>
 
