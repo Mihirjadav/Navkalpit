@@ -28,7 +28,7 @@ const Navbar = () => {
               <img
                 src={Navkalpit_logo}
                 alt="Navkalpit logo"
-                className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
               {/* <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
@@ -145,11 +145,16 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 px-4 pb-6 pt-4 space-y-3 shadow-md z-40">
-          <div className="flex items-center justify-between mb-3">
-            {/* Logo (small) */}
-            <NavLink to="/" onClick={() => setMenuOpen(false)}>
-              <img src={Navkalpit_logo} alt="Logo" className="h-10 object-contain" />
+        <div className="md:hidden w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 px-4 pb-3 pt-4git shadow-md z-40">
+          {/* Mobile menu header: Home and Theme toggle */}
+          <div className="flex items-center justify-between ">
+            {/* Home Link */}
+            <NavLink
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-medium"
+            >
+              Home
             </NavLink>
 
             {/* Theme toggle */}
@@ -166,10 +171,11 @@ const Navbar = () => {
             </button>
           </div>
 
+
           {/* Nav Links */}
           <div className="flex flex-col space-y-2 text-sm font-medium">
             {[
-              ["Home", "/"],
+              // ["Home", "/"],
               ["About", "/aboutus"],
               ["Blogs", "/blogs"],
               ["Service", "/services"],
