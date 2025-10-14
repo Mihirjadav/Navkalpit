@@ -21,18 +21,18 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:px-8 h-16">
           {/* Brand / Company name */}
           <div className="flex items-center mr-6">
-           <NavLink
+            <NavLink
               to="/"
               className="flex items-center gap-3 hover:opacity-90"
             >
               <img
                 src={Navkalpit_logo}
                 alt="Navkalpit logo"
-                className="h-15 w-auto object-contain"
+                className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
               />
-              <h1 className="text-2xl font-bold text-brand hidden sm:block">
+              {/* <h1 className="text-2xl font-bold text-brand hidden sm:block">
                 Navkalpit
-              </h1>
+              </h1> */}
             </NavLink>
           </div>
 
@@ -141,111 +141,76 @@ const Navbar = () => {
       </header>
 
       {/* spacer so page content doesn't sit under fixed navbar */}
-      <div className="h-16 md:h-20" />
+      <div className="h-20 sm:h-24 md:h-28" />
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden card px-4 pb-4 space-y-2">
-          <div className="flex items-center gap-2">
+        <div className="md:hidden w-full bg-white/80 backdrop-blur-sm border-b border-gray-200 px-4 pb-6 pt-4 space-y-3 shadow-md z-40">
+          <div className="flex items-center justify-between mb-3">
+            {/* Logo (small) */}
+            <NavLink to="/" onClick={() => setMenuOpen(false)}>
+              <img src={Navkalpit_logo} alt="Logo" className="h-10 object-contain" />
+            </NavLink>
+
+            {/* Theme toggle */}
             <button
               aria-label="Toggle theme"
-              onClick={() => toggleTheme()}
+              onClick={toggleTheme}
               className="p-2 rounded-md bg-transparent hover:bg-brand-tint icon-btn"
             >
               {theme === "dark" ? (
-                <LightModeIcon style={{ fontSize: 18 }} />
+                <LightModeIcon style={{ fontSize: 20 }} />
               ) : (
-                <DarkModeIcon style={{ fontSize: 18 }} />
+                <DarkModeIcon style={{ fontSize: 20 }} />
               )}
             </button>
-            <span className="text-sm">
-              {theme === "dark" ? "Dark" : "Light"}
-            </span>
           </div>
-          <NavLink
-            to="/"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/blogs"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Blogs
-          </NavLink>
-          <NavLink
-            to="/service"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Service
-          </NavLink>
-          <NavLink
-            to="/products"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Products
-          </NavLink>
-          <NavLink
-            to="/library"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Library
-          </NavLink>
-          <NavLink
-            to="/faq"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            FAQ
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={navLinkClass}
-            onClick={() => setMenuOpen(false)}
-          >
-            Contact
-          </NavLink>
-          <div className="flex items-center gap-3 pt-2">
-            <NavLink
-              to="/signup"
-              onClick={() => setMenuOpen(false)}
-              className="p-0"
-            >
+
+          {/* Nav Links */}
+          <div className="flex flex-col space-y-2 text-sm font-medium">
+            {[
+              ["Home", "/"],
+              ["About", "/aboutus"],
+              ["Blogs", "/blogs"],
+              ["Service", "/services"],
+              ["Products", "/products"],
+              ["Library", "/library"],
+              ["FAQ", "/faq"],
+              ["Contact", "/contact"],
+            ].map(([label, path]) => (
+              <NavLink
+                key={label}
+                to={path}
+                className={navLinkClass}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </NavLink>
+            ))}
+          </div>
+
+          {/* Icons: User & Cart */}
+          <div className="flex items-center gap-4 pt-4">
+            <NavLink to="/signup" onClick={() => setMenuOpen(false)}>
               <button
                 aria-label="User Signup"
-                className="icon-btn p-2 rounded-md hover:bg-brand-tint hover-brand"
+                className="icon-btn p-2 rounded-md hover:bg-brand-tint"
               >
-                <PersonIcon style={{ fontSize: 18 }} />
+                <PersonIcon style={{ fontSize: 20 }} />
               </button>
             </NavLink>
-            <NavLink
-              to="/cart"
-              onClick={() => setMenuOpen(false)}
-              className="p-0"
-            >
+            <NavLink to="/cart" onClick={() => setMenuOpen(false)}>
               <button
                 aria-label="Cart"
-                className="icon-btn p-2 rounded-md hover:bg-brand-tint hover-brand"
+                className="icon-btn p-2 rounded-md hover:bg-brand-tint"
               >
-                <ShoppingCartIcon style={{ fontSize: 18 }} />
+                <ShoppingCartIcon style={{ fontSize: 20 }} />
               </button>
             </NavLink>
           </div>
         </div>
       )}
+
     </>
   );
 };
