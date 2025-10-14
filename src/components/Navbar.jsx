@@ -150,7 +150,7 @@ const Navbar = () => {
             } backdrop-blur-sm border-b border-gray-200 px-4 pb-3 pt-4 shadow-md z-40`}
         >
           {/* Mobile menu header: Home and Theme toggle */}
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between">
             <NavLink
               to="/"
               onClick={() => setMenuOpen(false)}
