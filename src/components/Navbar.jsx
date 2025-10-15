@@ -141,13 +141,13 @@ const Navbar = () => {
       </header>
 
       {/* spacer so page content doesn't sit under fixed navbar */}
-      <div className="h-20 sm:h-24 md:h-28" />
+      <div className="h-14 sm:h-24 md:h-28" />
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div
           className={`md:hidden w-full ${theme === "dark" ? "bg-gray-900 text-white" : "bg-white/80 text-gray-800"
-            } backdrop-blur-sm border-b border-gray-200 px-4 pb-3 pt-4 shadow-md z-40`}
+            } backdrop-blur-sm border-b border-gray-200 px-4 pb-2 pt-4 shadow-md z-40`}
         >
           {/* Mobile menu header: Home and Theme toggle */}
           <div className="flex items-center justify-between">

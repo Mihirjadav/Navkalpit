@@ -13,7 +13,7 @@ const ProductCard = ({ img, name, price }) => {
         <h3 className="text-lg font-medium card-title mb-2">{name}</h3>
         <div className="flex justify-center gap-28">
           <p className="font-semibold card-price">{price}</p>
-        <button className="border px-2 cursor-pointer">Buy Now</button>
+        <button className="border px-2 cursor-pointer rounded-md">Buy Now</button>
         </div>
       </div>
     </div>
