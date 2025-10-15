@@ -180,7 +180,7 @@ const Navbar = () => {
               ["Service", "/services"],
               ["Products", "/products"],
               ["Library", "/library"],
-              ["FAQ", "/faq"],
+              // ["FAQ", "/faq"],
               ["Contact", "/contact"],
             ].map(([label, path]) => (
               <NavLink
