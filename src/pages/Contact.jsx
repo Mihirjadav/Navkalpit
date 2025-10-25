@@ -1,24 +1,22 @@
 import React from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaUserTie } from "react-icons/fa";
+import Design5 from "../assets/images/Design5.jpg";
 
 const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with background image */}
-      <section
-        className="w-full h-64 md:h-96 bg-center bg-cover flex items-center"
-        style={{ backgroundImage: "url('/assets/images/contact.jpg')" }}
-      >
-        <div className="w-full">
-          <div className="max-w-7xl mx-auto px-6 py-14 text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2">
-              Contact Us
-            </h1>
-            <p className="text-white/90 max-w-2xl mx-auto">
-              Have a question about your order or our capabilities? We're here
-              to help.
-            </p>
-          </div>
+      <section className="relative w-full h-auto">
+        <img
+          src={Design5}
+          alt="Contact Banner"
+          className="w-full h-auto object-cover md:h-[500px]"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-2">Contact Us</h1>
+          <p className="text-white/90 max-w-2xl mx-auto">
+            Have a question about your order or our capabilities? We're here to help.
+          </p>
         </div>
       </section>
 
