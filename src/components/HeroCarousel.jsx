@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PrimaryButton from "./PrimaryButton";
 import Design1 from "../assets/images/Design1.jpg";
 import Design3 from "../assets/images/Design3.jpg";
-
+import Design4 from "../assets/images/Design4.jpg";
 
 // Replace these paths with your actual images
 const slides = [
@@ -14,7 +14,7 @@ const slides = [
   },
   {
     id: 2,
-    img: "/assets/images/banner2.jpg",
+    img: Design4,
     title: "Latest Hardware Components",
     subtitle: "Upgrade your system with top brands",
   },

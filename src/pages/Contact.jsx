@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaUserTie } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -34,13 +34,26 @@ const Contact = () => {
             </p>
 
             <div className="space-y-6">
+
+              {/* CEO / Founder */}
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
+                  {/* You can use a user icon or CEO image */}
+                  <FaUserTie className="text-blue-600" />
+                </div>
+                <div>
+                  <h4 className="font-medium">CEO / Founder</h4>
+                  <p className="text-gray-600">Kalpesh Parmar</p>
+                </div>
+              </div>
+
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
                   <FaPhoneAlt className="text-blue-600" />
                 </div>
                 <div>
                   <h4 className="font-medium">Sales & Support</h4>
-                  <p className="text-gray-600">+1 (800) 123-4567</p>
+                  <p className="text-gray-600">+91 7383881288</p>
                 </div>
               </div>
 
@@ -55,16 +68,18 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
+                <div className="w-20 h-12 rounded-full bg-gray-100 flex items-center justify-center shadow">
                   <FaMapMarkerAlt className="text-blue-600" />
                 </div>
                 <div>
                   <h4 className="font-medium">Headquarters</h4>
                   <p className="text-gray-600">
-                    456 Tech Drive, Silicon Valley, CA 94043
+                    409, The Millenium, Circle, 150 Feet Ring Rd, nr. Nana Mava, Padmi Society, Mavdi, Rajkot, Gujarat 360005
                   </p>
                 </div>
+
               </div>
+
             </div>
           </div>
 
