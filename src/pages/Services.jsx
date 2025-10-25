@@ -24,7 +24,7 @@ const Services = () => {
       </section>
 
       {/* PCB Design (text left, image right) */}
-      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      {/* <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
             <span className="p-2 rounded-full bg-brand text-white">
@@ -47,10 +47,10 @@ const Services = () => {
             className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* PCB Assembly (image left, text right) */}
-      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      {/* <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="order-2 md:order-1 flex justify-center md:justify-start">
           <img
             src={pcbAssemblyImg}
@@ -73,10 +73,10 @@ const Services = () => {
             Request a Quote
           </PrimaryButton>
         </div>
-      </section>
+      </section> */}
 
       {/* PCB Fabrication (text left, image right) */}
-      <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      {/* <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <h3 className="text-2xl font-semibold flex items-center gap-3 mb-4">
             <span className="p-2 rounded-full bg-brand text-white">
@@ -99,7 +99,7 @@ const Services = () => {
             className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* 3D Printer Solution (image left, text right) */}
       <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

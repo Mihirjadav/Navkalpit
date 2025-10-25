@@ -65,22 +65,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-3xl font-extrabold">Dashboard</h1>
-          <p className="text-sm text-gray-500">
-            Overview of key metrics and recent activity
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <input
-            placeholder="Search orders, products..."
-            className="border border-gray-200 rounded-md px-3 py-2 text-sm max-w-xs w-full md:w-64"
-          />
-        </div>
-      </div>
-
+      
       <div className="flex gap-4 mb-8">
         <StatCard
           title="Total Revenue"

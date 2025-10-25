@@ -22,8 +22,7 @@ export default function Footer() {
               <div className="text-2xl font-bold">Navkalpit</div>
             </div>
             <p className="text-sm text-gray-500">
-              Your partner for fast and reliable PCB prototyping and
-              manufacturing.
+              Your partner for fast and reliable 3D printing and prototyping.
             </p>
           </div>
 
@@ -48,9 +47,9 @@ export default function Footer() {
               <li>PCB Prototyping</li>
               <li>PCB Assembly</li>
               <li>Capabilities</li> */}
-              <NavLink>PCB Design</NavLink><br />
+              {/* <NavLink>PCB Design</NavLink><br />
               <NavLink>PCB Assembly</NavLink><br />
-              <NavLink>PCB Fabrication</NavLink><br />
+              <NavLink>PCB Fabrication</NavLink><br /> */}
               <NavLink>3D Printer Solution</NavLink>
             </ul>
           </div>

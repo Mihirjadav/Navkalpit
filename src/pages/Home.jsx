@@ -28,7 +28,7 @@ const Home = () => {
                 Fast Turnaround
               </h3>
               <p className="text-gray-500">
-                Get your PCB prototypes in as little as 24 hours. We optimize
+                Get your 3D Print in as little as 24 hours. We optimize
                 our process for speed and efficiency.
               </p>
             </div>
@@ -70,7 +70,7 @@ const Home = () => {
           <div className="card p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
               <GiClockwork className="h-6 w-6 text-blue-600" />
-              PCB Prototyping
+              3D Printing 
             </h3>
             <p className="text-gray-700 mb-6">
               Quickly validate your designs with our high-quality prototyping
@@ -82,7 +82,7 @@ const Home = () => {
           <div className="card p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold card-title mb-3 flex items-center gap-2">
               <GiCircuitry className="h-6 w-6 text-blue-600" />
-              PCB Assembly
+              Developerment
             </h3>
             <p className="text-gray-700 mb-6">
               Our full-turnkey assembly service handles everything from

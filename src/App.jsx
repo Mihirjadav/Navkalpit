@@ -20,6 +20,8 @@ import {
   AdminManageBlogs,
   AdminNewBlog,
 } from "./pages";
+import AdminCustomer from "./pages/admin/Customer";
+import Dprint from "./pages/3d_print";
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="faq" element={<Faq />} />
+          <Route path="3d_print" element={<Dprint />}/>
           <Route path="signup" element={<Signup />} />
           <Route path="signin" element={<Signin />} />
         </Route>
@@ -48,6 +51,7 @@ function App() {
           <Route path="orders" element={<AdminOrders />} />
           <Route path="blogs" element={<AdminManageBlogs />} />
           <Route path="blogs/new" element={<AdminNewBlog />} />
+          <Route path="customer" element={<AdminCustomer/>}/>
         </Route>
       </Routes>
     </Router>

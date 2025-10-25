@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import PrimaryButton from "./PrimaryButton";
+import Design1 from "../assets/images/Design1.jpg";
+import Design3 from "../assets/images/Design3.jpg";
+
 
 // Replace these paths with your actual images
 const slides = [
   {
     id: 1,
-    img: "/assets/images/banner1.jpg",
-    title: `High-Quality PCBs, Delivered Fast.`,
+    img: Design1,
+    title: `High-Quality 3D Printing, Delivered Fast.`,
     subtitle: `Your trusted partner for reliable and affordable PCB prototyping and manufacturing services.`,
   },
   {
@@ -17,7 +20,7 @@ const slides = [
   },
   {
     id: 3,
-    img: "/assets/images/banner3.jpg",
+    img: Design3,
     title: "Custom PC Builds",
     subtitle: "Tailored solutions for gamers & creators",
   },
