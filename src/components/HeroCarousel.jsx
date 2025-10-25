@@ -9,19 +9,19 @@ const slides = [
   {
     id: 1,
     img: Design1,
-    title: `High-Quality 3D Printing, Delivered Fast.`,
+    title: `Next-Gen 3D Printing for Every Creator`,
     // subtitle: `Your trusted partner for reliable and affordable PCB prototyping and manufacturing services.`,
   },
   {
     id: 2,
     img: Design4,
-    title: "Latest Hardware Components",
+    title: "Innovating the Future with 3D Printing",
     // subtitle: "Upgrade your system with top brands",
   },
   {
     id: 3,
     img: Design3,
-    title: "Custom PC Builds",
+    title: "Smart, Fast & Reliable 3D Printing Services",
     // subtitle: "Tailored solutions for gamers & creators",
   },
 ];
