@@ -2,11 +2,13 @@ import React from "react";
 import PrimaryButton from "../components/PrimaryButton";
 import { GiCircuitry, GiSolderingIron } from "react-icons/gi";
 import { SiAltiumdesigner } from "react-icons/si";
+import Design2 from "../assets/images/Design2.jpg";
 
 // Images are stored in public/assets/images
-const pcbProtoImg = "/assets/images/PCBM.webp";
-const pcbAssemblyImg = "/assets/images/PCB.webp";
-const advancedImg = "/assets/images/febrication.webp";
+// const pcbProtoImg = "/assets/images/PCBM.webp";
+// const pcbAssemblyImg = "/assets/images/PCB.webp";
+// const advancedImg = "/assets/images/febrication.webp";
+// const Design2 = "/assets/images/Design2.jpg";
 
 const Services = () => {
   return (
@@ -105,9 +107,9 @@ const Services = () => {
       <section className="max-w-7xl mx-auto py-12 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="order-2 md:order-1 flex justify-center md:justify-start">
           <img
-            src={pcbAssemblyImg}
+            src={Design2}
             alt="PCB Assembly"
-            className="w-full md:w-4/5 rounded-2xl shadow-lg object-cover"
+            className="w-full md:w-4/5 h-100 rounded-2xl shadow-lg object-cover"
           />
         </div>
         <div className="order-1 md:order-2">
